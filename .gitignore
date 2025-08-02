@@ -1,0 +1,23 @@
+# Java specific
+*.class
+*.jar
+*.war
+*.ear
+
+# NetBeans
+nbproject/private/
+
+# Eclipse
+.settings/
+.project
+.classpath
+
+# IntelliJ
+.idea/
+*.iml
+out/
+
+# Tomcat
+logs/
+temp/
+work/
