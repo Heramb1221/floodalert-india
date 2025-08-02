@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - FloodAlert India</title>
+    <link rel="stylesheet" href="css/error.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Add this to your existing CSS */
+        .error-illustration svg {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            animation: float 6s ease-in-out infinite;
+        }
+        .error-illustration svg .wave {
+            animation: waveMove 8s linear infinite;
+        }
+        @keyframes waveMove {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Water Wave Background -->
+    <div class="water-wave"></div>
+    
+    <!-- Error Container -->
+    <div class="error-container">
+        <div class="error-card">
+            <div class="error-header">
+                <div class="logo">
+                    <img src="assets/floodalert-logo.png" alt="FloodAlert India">
+                    <span>FloodAlert <strong>India</strong></span>
+                </div>
+                <h1>Oops! Something went wrong</h1>
+                <p>We're experiencing technical difficulties. Our team has been notified and is working to fix the issue.</p>
+            </div>
+            
+            <div class="error-content">
+                <div class="error-illustration">
+                    <!-- Embedded SVG Illustration -->
+                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#FF9933" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"/>
+                        <path fill="#FF9933" d="M256 128c-17.7 0-32 14.3-32 32v128c0 17.7 14.3 32 32 32s32-14.3 32-32V160c0-17.7-14.3-32-32-32zm0 224c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32z"/>
+                        <!-- Water waves -->
+                        <path class="wave" fill="#0288d1" d="M256 400c-30.9 0-56-25.1-56-56s25.1-56 56-56 56 25.1 56 56-25.1 56-56 56z" opacity="0.2"/>
+                        <path class="wave" fill="#0288d1" d="M256 380c-19.9 0-36-16.1-36-36s16.1-36 36-36 36 16.1 36 36-16.1 36-36 36z" opacity="0.3"/>
+                        <path class="wave" fill="#0288d1" d="M256 360c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16z" opacity="0.4"/>
+                    </svg>
+                    <div class="water-drop" style="top: 20%; left: 10%;"></div>
+                    <div class="water-drop" style="top: 40%; left: 80%;"></div>
+                    <div class="water-drop" style="top: 70%; left: 30%;"></div>
+                </div>
+                
+                <div class="error-details">
+                    <div class="error-code">
+                        <span>Error Code: 500</span>
+                    </div>
+                    
+                    <div class="error-message">
+                        <p>We apologize for the inconvenience. Please try one of these options:</p>
+                        <ul>
+                            <li><i class="fas fa-arrow-right"></i> Refresh the page</li>
+                            <li><i class="fas fa-arrow-right"></i> Go back to the previous page</li>
+                            <li><i class="fas fa-arrow-right"></i> Visit our homepage</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="error-actions">
+                        <a href="javascript:location.reload()" class="btn-retry">
+                            <i class="fas fa-sync-alt"></i> Try Again
+                        </a>
+                        <a href="index.html" class="btn-home">
+                            <i class="fas fa-home"></i> Return Home
+                        </a>
+                    </div>
+                    
+                    <div class="error-support">
+                        <p>Need immediate assistance?</p>
+                        <a href="index.html" class="btn-support">
+                            <i class="fas fa-headset"></i> Contact Support
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FloodAlert India - Real-Time Flood Monitoring</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Water Wave Background -->
+    <div class="water-wave"></div>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/floodalert-logo.png" alt="FloodAlert India">
+                <span>FloodAlert <strong>India</strong></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#alert">Alerts</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="auth-buttons">
+                    <a href="login.html" class="btn-login">Login</a>
+                    <a href="register.html" class="btn-register">Register</a>
+                </li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Real-Time Flood Monitoring for <span>India</span></h1>
+                <p class="subtitle">Protecting communities with advanced early warning systems across all Indian states</p>
+                <div class="hero-buttons">
+                    <a href="login.html" class="btn-primary">View Current Alerts</a>
+                    <a href="login.html" class="btn-secondary">Report Flood Incident</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/india-flood-map.png" alt="India Flood Map" class="map-image">
+                <div class="pulse-dots">
+                    <div class="pulse-dot" style="top: 30%; left: 25%;"></div>
+                    <div class="pulse-dot" style="top: 45%; left: 60%;"></div>
+                    <div class="pulse-dot" style="top: 70%; left: 40%;"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Alert Status Section -->
+    <section id="alert" class="alert-status" >
+        <div class="container" id="alert">
+            <h2>Current Flood Status Across India</h2>
+            <div class="status-grid">
+                <div class="status-card severe">
+                    <div class="status-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Severe Alert</h3>
+                    <p class="count">5 States</p>
+                    <p>Assam, Bihar, Kerala, Maharashtra, West Bengal</p>
+                </div>
+                <div class="status-card warning">
+                    <div class="status-icon">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <h3>Warning</h3>
+                    <p class="count">8 States</p>
+                    <p>Odisha, Gujarat, Karnataka, Andhra Pradesh, and more</p>
+                </div>
+                <div class="status-card normal">
+                    <div class="status-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Normal</h3>
+                    <p class="count">15 States</p>
+                    <p>No flood threats currently detected</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="resources">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p class="section-subtitle">Comprehensive flood monitoring and emergency response solutions</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Real-Time Alerts</h3>
+                    <p>Instant notifications about flood risks in your area via SMS, app, and email</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Interactive Maps</h3>
+                    <p>Live flood maps showing affected areas, water levels, and safe zones</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Emergency Contacts</h3>
+                    <p>Direct access to NDRF, State Disaster Response, and local authorities</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud-rain"></i>
+                    </div>
+                    <h3>Rainfall Data</h3>
+                    <p>Historical and forecasted rainfall patterns from IMD</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Reports</h3>
+                    <p>Contribute flood information from your location</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Preparedness Guides</h3>
+                    <p>Multilingual resources for flood safety and recovery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Section -->
+    <section class="emergency" id="contact">
+        <div class="container">
+            <div class="emergency-content">
+                <h2>Emergency Assistance</h2>
+                <p>If you're in immediate danger due to flooding, contact these numbers:</p>
+                <div class="emergency-numbers">
+                    <div class="emergency-number">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <span>National Disaster Response</span>
+                            <strong>1078</strong>
+                        </div>
+                    </div>
+                    <div class="emergency-number">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <span>NDRF Helpline</span>
+                            <strong>011-24363260</strong>
+                        </div>
+                    </div>
+                    <div class="emergency-number">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <span>Police</span>
+                            <strong>100</strong>
+                        </div>
+                    </div>
+                </div>
+                <a href="login.html" class="btn-emergency">
+                    <i class="fas fa-exclamation-triangle"></i> Emergency Report
+                </a>
+            </div>
+            <div class="emergency-image">
+                <img src="assets/emergency-team.jpeg" alt="Emergency Team">
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news">
+        <div class="container">
+            <h2>Latest Flood News</h2>
+            <p class="section-subtitle">Updates from across India</p>
+            
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('assets/news1.jpg');"></div>
+                    <div class="news-content">
+                        <span class="news-date">June 15, 2023</span>
+                        <h3>Assam Floods: Over 50,000 affected in 12 districts</h3>
+                        <p>The flood situation in Assam remains critical with the Brahmaputra river flowing above danger level at several places...</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('assets/news2.jpg');"></div>
+                    <div class="news-content">
+                        <span class="news-date">June 12, 2023</span>
+                        <h3>IMD predicts heavy rainfall in Kerala next week</h3>
+                        <p>The India Meteorological Department has issued an orange alert for several districts in Kerala...</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('assets/news3.jpg');"></div>
+                    <div class="news-content">
+                        <span class="news-date">June 10, 2023</span>
+                        <h3>NDRF deploys 10 teams in Bihar as flood threat looms</h3>
+                        <p>With rising water levels in the Gandak river, the National Disaster Response Force has positioned teams...</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <img src="assets/floodalert-logo.png" alt="FloodAlert India">
+                        <span>FloodAlert <strong>India</strong></span>
+                    </div>
+                    <p>A initiative by the Ministry of Jal Shakti in collaboration with IMD and State Disaster Management Authorities</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Current Alerts</a></li>
+                        <li><a href="https://vai.bmtpc.org/flood.html">Flood Map</a></li>
+                        <li><a href="login.html">Report Incident</a></li>
+                        <li><a href="#resouces">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/flood.html?srsltid=AfmBOoo0_OMgwM-beHG15w5rnJUjyH_B7C62OFuAyIO9E2nZvtTAPOVu">Flood Preparedness</a></li>
+                        <li><a href="#">Evacuation Plans</a></li>
+                        <li><a href="#">Shelter Locations</a></li>
+                        <li><a href="#">Recovery Guides</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone-alt"></i> National Helpline: 1078</li>
+                        <li><i class="fas fa-envelope"></i> info@floodalertindia.gov.in</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Ministry of Jal Shakti, New Delhi</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FloodAlert India. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

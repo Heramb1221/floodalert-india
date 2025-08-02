@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FloodAlert - Login</title>
+    <style>
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #34a853;
+            --danger-color: #ea4335;
+            --warning-color: #fbbc05;
+            --dark-blue: #0d47a1;
+            --water-blue: #0288d1;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .water-drop {
+            position: absolute;
+            background: rgba(2, 136, 209, 0.3);
+            border-radius: 50%;
+            animation: drop 8s linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes drop {
+            0% {
+                transform: translateY(-100px) scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(100vh) scale(1);
+                opacity: 0;
+            }
+        }
+        
+        .login-container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            padding: 30px;
+            text-align: center;
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .login-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            animation: waterFlow 3s linear infinite;
+        }
+        
+        @keyframes waterFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--water-blue));
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        h1 {
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        
+        .subtitle {
+            color: #555;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        input:focus {
+            border-color: var(--water-blue);
+            box-shadow: 0 0 0 3px rgba(2, 136, 209, 0.2);
+            outline: none;
+        }
+        
+        .user-type {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .user-type label {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .user-type input[type="radio"] {
+            display: none;
+        }
+        
+        .user-type input[type="radio"]:checked + label {
+            background: var(--water-blue);
+            color: white;
+            border-color: var(--water-blue);
+        }
+        
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(to right, var(--primary-color), var(--water-blue));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 20px;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(2, 136, 209, 0.4);
+        }
+        
+        .links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .links a {
+            color: var(--water-blue);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s ease;
+        }
+        
+        .links a:hover {
+            color: var(--dark-blue);
+            text-decoration: underline;
+        }
+        
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="rgba(2, 136, 209, 0.1)" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="rgba(2, 136, 209, 0.1)" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="rgba(2, 136, 209, 0.1)"/></svg>');
+            background-size: cover;
+            z-index: -1;
+            animation: wave 10s linear infinite;
+        }
+        
+        @keyframes wave {
+            0% {
+                background-position-x: 0;
+            }
+            100% {
+                background-position-x: 1000px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 20px;
+            }
+            
+            .user-type {
+                flex-direction: column;
+            }
+            
+            .user-type label {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Water drop animations -->
+    <div class="water-drop" style="left: 10%; width: 20px; height: 20px; animation-delay: 0s;"></div>
+    <div class="water-drop" style="left: 20%; width: 15px; height: 15px; animation-delay: 2s;"></div>
+    <div class="water-drop" style="left: 35%; width: 25px; height: 25px; animation-delay: 4s;"></div>
+    <div class="water-drop" style="left: 50%; width: 18px; height: 18px; animation-delay: 6s;"></div>
+    <div class="water-drop" style="left: 65%; width: 22px; height: 22px; animation-delay: 1s;"></div>
+    <div class="water-drop" style="left: 80%; width: 16px; height: 16px; animation-delay: 3s;"></div>
+    <div class="water-drop" style="left: 90%; width: 20px; height: 20px; animation-delay: 5s;"></div>
+    
+    <div class="login-container">
+        <div class="logo">FA</div>
+        <h1>FloodAlert India</h1>
+        <p class="subtitle">Real-time flood monitoring and emergency response</p>
+        
+        <form id="loginForm" action="Login" method="POST">
+            <div class="user-type">
+                <input type="radio" id="citizen" name="userType" value="citizen" checked>
+                <label for="citizen">Citizen</label>
+                
+                <input type="radio" id="authority" name="userType" value="authority">
+                <label for="authority">Authority</label>
+                
+                <input type="radio" id="admin" name="userType" value="admin">
+                <label for="admin">Admin</label>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+            </div>
+            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    
+    <div class="wave"></div>
+    
+    <script>
+        // Generate more water drops dynamically
+        function createWaterDrops() {
+            const body = document.body;
+            const dropsCount = 15;
+            
+            for (let i = 0; i < dropsCount; i++) {
+                const drop = document.createElement('div');
+                drop.className = 'water-drop';
+                
+                const size = Math.random() * 15 + 10;
+                const left = Math.random() * 100;
+                const delay = Math.random() * 8;
+                
+                drop.style.left = `${left}%`;
+                drop.style.width = `${size}px`;
+                drop.style.height = `${size}px`;
+                drop.style.animationDelay = `${delay}s`;
+                
+                body.appendChild(drop);
+            }
+        }
+        
+        // Initialize on load
+        window.onload = function() {
+            createWaterDrops();
+            
+            // Form submission handling
+            document.getElementById('loginForm').addEventListener('submit', function(e) {
+                // You can add client-side validation here
+                // e.preventDefault(); // Uncomment to prevent actual submission during testing
+                
+                // For demo purposes, show which user type was selected
+                const userType = document.querySelector('input[name="userType"]:checked').value;
+                console.log(`Logging in as ${userType}`);
+            });
+        };
+    </script>
+</body>
+</html>

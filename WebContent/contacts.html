@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Contacts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Reusing the same CSS style */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        
+        .dashboard-section {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2 i {
+            margin-right: 10px;
+            color: #e74c3c;
+        }
+        
+        h3 {
+            color: #c0392b;
+            margin-top: 25px;
+            border-bottom: 1px solid #ecf0f1;
+            padding-bottom: 5px;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            transition: background-color 0.3s;
+        }
+        
+        .back-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .back-button i {
+            margin-right: 5px;
+        }
+        
+        .contact-category {
+            margin-bottom: 20px;
+        }
+        
+        .contact-item {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .contact-item strong {
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .contact-item .numbers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .contact-item .number {
+            background-color: #e1f5fe;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-item .number i {
+            margin-right: 5px;
+            color: #3498db;
+        }
+        
+        .important-note {
+            background-color: #ffebee;
+            border-left: 4px solid #e74c3c;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        @media (max-width: 600px) {
+            .contact-item .numbers {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="javascript:history.back()" class="back-button">
+        <i class="fas fa-arrow-left"></i> Back
+    </a>
+    
+    <div class="dashboard-section">
+        <h2><i class="fas fa-phone-alt"></i> Disaster Emergency Contacts</h2>
+        
+        <div class="important-note">
+            <p><strong>Important:</strong> In case of emergency, dial 112 (National Disaster Helpline) or 100 (Police) immediately.</p>
+        </div>
+        
+        <div class="contact-category">
+            <h3>National Helplines</h3>
+            
+            <div class="contact-item">
+                <strong>DISASTER HELPLINE</strong>
+                <div class="numbers">
+                    <span class="number"><i class="fas fa-phone"></i> 112</span>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <strong>NDRF (National Disaster Response Force)</strong>
+                <div class="numbers">
+                    <span class="number"><i class="fas fa-phone"></i> 9711077372</span>
+                    <span class="number"><i class="fas fa-phone"></i> 011-24363260</span>
+                    <span class="number"><i class="fas fa-phone"></i> 011-26107953</span>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <strong>NDMA (National Disaster Management Authority)</strong>
+                <div class="numbers">
+                    <span class="number"><i class="fas fa-phone"></i> 011-1078</span>
+                    <span class="number"><i class="fas fa-phone"></i> 011-26701700</span>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <strong>Army Helpline</strong>
+                <div class="numbers">
+                    <span class="number"><i class="fas fa-phone"></i> 011-23332045</span>
+                    <span class="number"><i class="fas fa-phone"></i> 011-23019831</span>
+                    <span class="number"><i class="fas fa-phone"></i> 011-23322045</span>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <strong>MHA Control Room (Ministry of Home Affairs)</strong>
+                <div class="numbers">
+                    <span class="number"><i class="fas fa-phone"></i> 011-23093054</span>
+                    <span class="number"><i class="fas fa-phone"></i> 011-23092763</span>
+                    <span class="number"><i class="fas fa-phone"></i> 011-23092923</span>
+                    <span class="number"><i class="fas fa-phone"></i> 011-23093566</span>
+                    <span class="number"><i class="fas fa-phone"></i> 011-23093563</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-category">
+            <h3>State Flood Control Room Numbers</h3>
+            
+            <div class="contact-item">
+                <strong>Uttarakhand</strong>
+                <div class="numbers">
+                    <span class="number"><i class="fas fa-phone"></i> 1070</span>
+                    <span class="number"><i class="fas fa-phone"></i> 9557444486</span>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <strong>Mumbai</strong>
+                <div class="numbers">
+                    <span class="number"><i class="fas fa-phone"></i> 1916</span>
+                    <span class="number"><i class="fas fa-phone"></i> 108</span>
+                    <span class="number"><i class="fas fa-phone"></i> 022-26591241</span>
+                    <span class="number"><i class="fas fa-phone"></i> 022-26594176</span>
+                    <span class="number"><i class="fas fa-phone"></i> 8657402090</span>
+                    <span class="number"><i class="fas fa-phone"></i> 1800228801</span>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <strong>Gujarat</strong>
+                <div class="numbers">
+                    <span class="number"><i class="fas fa-phone"></i> 1078</span>
+                    <span class="number"><i class="fas fa-phone"></i> 079-23276944</span>
+                    <span class="number"><i class="fas fa-phone"></i> 1077</span>
+                    <span class="number"><i class="fas fa-phone"></i> Vadodara: 18002330265</span>
+                </div>
+            </div>
+            
+            <!-- More states can be added following the same pattern -->
+            <div class="contact-item">
+                <strong>Assam</strong>
+                <div class="numbers">
+                    <span class="number"><i class="fas fa-phone"></i> 1077</span>
+                    <span class="number"><i class="fas fa-phone"></i> 1070</span>
+                    <span class="number"><i class="fas fa-phone"></i> 0361-2237219</span>
+                    <span class="number"><i class="fas fa-phone"></i> 9401044617</span>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <strong>Delhi</strong>
+                <div class="numbers">
+                    <span class="number"><i class="fas fa-phone"></i> 011-24611210</span>
+                    <span class="number"><i class="fas fa-phone"></i> 011-24611108</span>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <strong>Kerala</strong>
+                <div class="numbers">
+                    <span class="number"><i class="fas fa-phone"></i> 1070</span>
+                    <span class="number"><i class="fas fa-phone"></i> 1077</span>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <strong>Tamil Nadu</strong>
+                <div class="numbers">
+                    <span class="number"><i class="fas fa-phone"></i> 1070</span>
+                    <span class="number"><i class="fas fa-phone"></i> WhatsApp: 9445869848</span>
+                    <span class="number"><i class="fas fa-phone"></i> Chennai: 1078</span>
+                    <span class="number"><i class="fas fa-phone"></i> Corporation: 1913</span>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <strong>Bihar</strong>
+                <div class="numbers">
+                    <span class="number"><i class="fas fa-phone"></i> 1078</span>
+                    <span class="number"><i class="fas fa-phone"></i> Toll Free: 18002456145</span>
+                    <span class="number"><i class="fas fa-phone"></i> NDRF: 8541908006</span>
+                    <span class="number"><i class="fas fa-phone"></i> Police: 100</span>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <strong>Hyderabad/Telangana</strong>
+                <div class="numbers">
+                    <span class="number"><i class="fas fa-phone"></i> 100/112</span>
+                    <span class="number"><i class="fas fa-phone"></i> Toll Free: 211111111</span>
+                    <span class="number"><i class="fas fa-phone"></i> GHMC: 9000113667</span>
+                    <span class="number"><i class="fas fa-phone"></i> NDRF: 8333068536</span>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <strong>Himachal Pradesh</strong>
+                <div class="numbers">
+                    <span class="number"><i class="fas fa-phone"></i> 1100</span>
+                    <span class="number"><i class="fas fa-phone"></i> 1070</span>
+                    <span class="number"><i class="fas fa-phone"></i> 1077</span>
+                    <span class="number"><i class="fas fa-phone"></i> Kullu: 8284525770</span>
+                    <span class="number"><i class="fas fa-phone"></i> Shimla: 0177-2800880</span>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <strong>Punjab</strong>
+                <div class="numbers">
+                    <span class="number"><i class="fas fa-phone"></i> Congress Helpline: 8968215758</span>
+                    <span class="number"><i class="fas fa-phone"></i> Ludhiana: 0161-2749120</span>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <strong>Haryana</strong>
+                <div class="numbers">
+                    <span class="number"><i class="fas fa-phone"></i> 1070</span>
+                    <span class="number"><i class="fas fa-phone"></i> 1077</span>
+                    <span class="number"><i class="fas fa-phone"></i> 112</span>
+                    <span class="number"><i class="fas fa-phone"></i> 0172-254938</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

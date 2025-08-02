@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - FloodAlert India</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* FAQ Page Specific Styles */
+        .faq-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .faq-header h1 {
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .faq-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-blue), var(--saffron));
+            border-radius: 2px;
+        }
+
+        .faq-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-search {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+
+        .faq-search input {
+            width: 100%;
+            padding: 15px 20px 15px 50px;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-search i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-blue);
+        }
+
+        .faq-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .faq-category {
+            padding: 10px 20px;
+            background-color: var(--white);
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .faq-category:hover, .faq-category.active {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border-color: var(--primary-blue);
+        }
+
+        .faq-accordion {
+            margin-bottom: 50px;
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px 60px 20px 25px;
+            position: relative;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--dark-blue);
+            font-size: 1.1rem;
+        }
+
+        .faq-question::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+            color: var(--primary-blue);
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 25px 20px;
+            max-height: 500px;
+        }
+
+        .faq-contact {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-contact h2 {
+            color: var(--dark-blue);
+            margin-bottom: 20px;
+        }
+
+        .faq-contact p {
+            color: var(--text-light);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .faq-contact-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(to right, var(--primary-blue), var(--water-blue));
+            color: var(--white);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(2, 136, 209, 0.2);
+        }
+
+        .faq-contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(2, 136, 209, 0.3);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .faq-header h1 {
+                font-size: 2rem;
+            }
+            
+            .faq-question {
+                padding-right: 50px;
+                font-size: 1rem;
+            }
+            
+            .faq-contact {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Water Wave Background -->
+    <div class="water-wave"></div>
+    
+    <!-- FAQ Container -->
+    <div class="faq-container">
+        <div class="faq-header">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions about FloodAlert India's services, alerts, and how to stay safe during floods.</p>
+        </div>
+
+        <div class="faq-search">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search FAQs...">
+        </div>
+
+        <div class="faq-categories">
+            <div class="faq-category active">All Questions</div>
+            <div class="faq-category">Alerts</div>
+            <div class="faq-category">Account</div>
+            <div class="faq-category">Reporting</div>
+            <div class="faq-category">Safety</div>
+        </div>
+
+        <div class="faq-accordion">
+            <!-- General Questions -->
+            <div class="faq-item active">
+                <div class="faq-question">What is FloodAlert India?</div>
+                <div class="faq-answer">
+                    <p>FloodAlert India is a national flood monitoring and early warning system developed by the Ministry of Jal Shakti in collaboration with IMD and State Disaster Management Authorities. Our system provides real-time flood alerts, preparedness information, and emergency response coordination to help protect communities across India from flood disasters.</p>
+                </div>
+            </div>
+
+            <!-- Alert Questions -->
+            <div class="faq-item">
+                <div class="faq-question">How do I receive flood alerts?</div>
+                <div class="faq-answer">
+                    <p>You can receive flood alerts through multiple channels:</p>
+                    <ul>
+                        <li>Registered users get alerts via SMS and email</li>
+                        <li>Mobile app notifications (available on Android and iOS)</li>
+                        <li>Website dashboard with real-time updates</li>
+                        <li>Local authorities may also broadcast alerts through sirens or loudspeakers in high-risk areas</li>
+                    </ul>
+                    <p>Ensure your contact information is up-to-date in your account settings to receive alerts.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What do the different alert levels mean?</div>
+                <div class="faq-answer">
+                    <p>Our alert system uses three severity levels:</p>
+                    <ul>
+                        <li><strong>Red (High):</strong> Immediate danger - evacuate if advised or move to higher ground</li>
+                        <li><strong>Orange (Medium):</strong> Significant flooding expected - prepare to evacuate</li>
+                        <li><strong>Yellow (Low):</strong> Potential flooding - stay alert and monitor updates</li>
+                    </ul>
+                    <p>Each alert will include specific instructions based on your location and the flood risk.</p>
+                </div>
+            </div>
+
+            <!-- Account Questions -->
+            <div class="faq-item">
+                <div class="faq-question">How do I register for FloodAlert India?</div>
+                <div class="faq-answer">
+                    <p>Registration is simple and free:</p>
+                    <ol>
+                        <li>Visit our website or download the mobile app</li>
+                        <li>Click on "Register" or "Sign Up"</li>
+                        <li>Provide your name, address, contact information, and email</li>
+                        <li>Create a password</li>
+                        <li>Verify your email address through the link we send you</li>
+                    </ol>
+                    <p>Once registered, you can customize your alert preferences in your account settings.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">I forgot my password. How can I reset it?</div>
+                <div class="faq-answer">
+                    <p>To reset your password:</p>
+                    <ol>
+                        <li>Go to the login page</li>
+                        <li>Click on "Forgot Password"</li>
+                        <li>Enter the email address associated with your account</li>
+                        <li>Check your email for a password reset link (valid for 24 hours)</li>
+                        <li>Follow the instructions to create a new password</li>
+                    </ol>
+                    <p>If you don't receive the email, please check your spam folder or contact our support team.</p>
+                </div>
+            </div>
+
+            <!-- Reporting Questions -->
+            <div class="faq-item">
+                <div class="faq-question">How can I report a flood incident?</div>
+                <div class="faq-answer">
+                    <p>You can report flood incidents through:</p>
+                    <ul>
+                        <li><strong>Mobile App:</strong> Use the "Report Incident" feature with photos and location</li>
+                        <li><strong>Website:</strong> Log in to your dashboard and submit a report</li>
+                        <li><strong>SMS:</strong> Send details to our emergency number (XXXX-XXXXXX)</li>
+                        <li><strong>Phone:</strong> Call the National Disaster Response Force at 1078</li>
+                    </ul>
+                    <p>Please provide as much detail as possible, including location, water level, and any immediate dangers.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What information should I include when reporting a flood?</div>
+                <div class="faq-answer">
+                    <p>When reporting a flood, please include:</p>
+                    <ul>
+                        <li>Exact location (address or landmarks)</li>
+                        <li>Current water level (ankle-deep, knee-deep, etc.)</li>
+                        <li>Rate of water rise (slow, medium, fast)</li>
+                        <li>Any visible damage or blocked roads</li>
+                        <li>Photos if possible (showing water level and surroundings)</li>
+                        <li>Your contact information for follow-up</li>
+                    </ul>
+                    <p>This information helps authorities assess the situation and respond appropriately.</p>
+                </div>
+            </div>
+
+            <!-- Safety Questions -->
+            <div class="faq-item">
+                <div class="faq-question">What should I do when I receive a flood alert?</div>
+                <div class="faq-answer">
+                    <p>When you receive a flood alert:</p>
+                    <ol>
+                        <li><strong>Read carefully:</strong> Note the severity level and specific instructions</li>
+                        <li><strong>Prepare to evacuate:</strong> Gather essential items (medicines, documents, food)</li>
+                        <li><strong>Move to safety:</strong> If advised to evacuate, go to higher ground or designated shelters</li>
+                        <li><strong>Avoid water:</strong> Don't walk or drive through floodwaters</li>
+                        <li><strong>Stay informed:</strong> Monitor updates through official channels</li>
+                        <li><strong>Help others:</strong> Check on neighbors, especially elderly or disabled</li>
+                    </ol>
+                    <p>Always follow instructions from local authorities.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How can I prepare my family for floods?</div>
+                <div class="faq-answer">
+                    <p>Flood preparedness checklist:</p>
+                    <ul>
+                        <li><strong>Know your risk:</strong> Check if you live in a flood-prone area</li>
+                        <li><strong>Emergency kit:</strong> Prepare with food, water, medicines for 3 days</li>
+                        <li><strong>Important documents:</strong> Keep copies in waterproof containers</li>
+                        <li><strong>Family plan:</strong> Decide meeting points and communication methods</li>
+                        <li><strong>Home preparation:</strong> Learn how to turn off utilities, elevate valuables</li>
+                        <li><strong>Stay informed:</strong> Register with FloodAlert India and monitor weather</li>
+                    </ul>
+                    <p>Visit our "Flood Preparedness" section for detailed guides and checklists.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-contact">
+            <h2>Still have questions?</h2>
+            <p>If you didn't find the answer you were looking for, our support team is ready to help you 24/7.</p>
+            <a href="contact.html" class="faq-contact-btn">Contact Support</a>
+        </div>
+    </div>
+
+    <script>
+        // FAQ Accordion Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                const isActive = item.classList.contains('active');
+                
+                // Close all items
+                document.querySelectorAll('.faq-item').forEach(el => {
+                    el.classList.remove('active');
+                });
+                
+                // Open current item if it was closed
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // FAQ Category Filter
+        document.querySelectorAll('.faq-category').forEach(category => {
+            category.addEventListener('click', () => {
+                // Update active category
+                document.querySelectorAll('.faq-category').forEach(c => {
+                    c.classList.remove('active');
+                });
+                category.classList.add('active');
+                
+                // In a real implementation, you would filter questions here
+                // This is just a placeholder for the UI
+            });
+        });
+
+        // FAQ Search Functionality
+        const searchInput = document.querySelector('.faq-search input');
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            // In a real implementation, you would filter questions here
+            // This is just a placeholder for the UI
+        });
+    </script>
+</body>
+</html>

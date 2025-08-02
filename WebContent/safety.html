@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Safety Guidelines</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Consistent styling with previous pages */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        
+        .dashboard-section {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2 i {
+            margin-right: 10px;
+            color: #3498db;
+        }
+        
+        h3 {
+            color: #2980b9;
+            margin-top: 25px;
+            border-bottom: 1px solid #ecf0f1;
+            padding-bottom: 5px;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            transition: background-color 0.3s;
+        }
+        
+        .back-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .back-button i {
+            margin-right: 5px;
+        }
+        
+        .guideline-section {
+            margin-bottom: 25px;
+        }
+        
+        .guideline-list {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .do-item, .dont-item {
+            padding: 8px 8px 8px 30px;
+            margin-bottom: 8px;
+            position: relative;
+            border-left: 4px solid transparent;
+        }
+        
+        .do-item {
+            border-color: #2ecc71;
+            background-color: #e8f8f0;
+        }
+        
+        .dont-item {
+            border-color: #e74c3c;
+            background-color: #fdedec;
+        }
+        
+        .do-item:before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: #2ecc71;
+            position: absolute;
+            left: 10px;
+        }
+        
+        .dont-item:before {
+            content: "\f00d";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: #e74c3c;
+            position: absolute;
+            left: 10px;
+        }
+        
+        .important-note {
+            background-color: #fff8e1;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .emergency-alert {
+            background-color: #ffebee;
+            border-left: 4px solid #e74c3c;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
+        }
+    </style>
+</head>
+<body>
+    <a href="javascript:history.back()" class="back-button">
+        <i class="fas fa-arrow-left"></i> Back
+    </a>
+    
+    <div class="dashboard-section">
+        <h2><i class="fas fa-life-ring"></i> Flood Safety Guidelines</h2>
+        
+        <div class="emergency-alert">
+            <p><strong>EMERGENCY ALERT:</strong> If flash flooding is occurring, move immediately to higher ground. Do not wait for instructions!</p>
+        </div>
+        
+        <div class="guideline-section">
+            <h3><i class="fas fa-home"></i> Before a Flood (Preparation)</h3>
+            <div class="guideline-list">
+                <div class="do-item">Avoid building in flood prone areas unless you elevate and reinforce your home.</div>
+                <div class="do-item">Elevate the furnace, water heater, and electric panel if susceptible to flooding.</div>
+                <div class="do-item">Install "Check Valves" in sewer traps to prevent floodwater from backing up into drains.</div>
+                <div class="do-item">Contact community officials about flood barriers (levees, beams, floodwalls) in your area.</div>
+                <div class="do-item">Seal basement walls with waterproofing compounds to avoid seepage.</div>
+            </div>
+        </div>
+        
+        <div class="guideline-section">
+            <h3><i class="fas fa-tv"></i> When a Flood is Likely</h3>
+            <div class="guideline-list">
+                <div class="do-item">Listen to the radio or television for official information and updates.</div>
+                <div class="do-item">Be aware that flash flooding can occur suddenly with little warning.</div>
+                <div class="do-item">Move immediately to higher ground if flash flooding is possible - don't wait for instructions.</div>
+                <div class="do-item">Know your area's flood risks - streams, drainage channels, canyons, etc.</div>
+                <div class="dont-item">Don't ignore evacuation orders - leave immediately when advised.</div>
+            </div>
+        </div>
+        
+        <div class="guideline-section">
+            <h3><i class="fas fa-people-carry"></i> Preparing to Evacuate</h3>
+            <div class="guideline-list">
+                <div class="do-item">Secure your home - bring in outdoor furniture if time permits.</div>
+                <div class="do-item">Move essential items to an upper floor.</div>
+                <div class="do-item">Turn off utilities at main switches/valves if instructed to do so.</div>
+                <div class="do-item">Disconnect electrical appliances before flooding occurs.</div>
+                <div class="dont-item">Never touch electrical equipment if you're wet or standing in water.</div>
+            </div>
+        </div>
+        
+        <div class="guideline-section">
+            <h3><i class="fas fa-walking"></i> Evacuation Safety</h3>
+            <div class="guideline-list">
+                <div class="dont-item">Don't walk through moving water - just 6 inches can knock you down.</div>
+                <div class="do-item">If you must walk in water, choose areas where water isn't moving.</div>
+                <div class="do-item">Use a stick to check ground firmness ahead of you.</div>
+                <div class="dont-item">Never drive into flooded areas - "Turn Around Don't Drown"</div>
+                <div class="do-item">If floodwaters rise around your car, abandon it for higher ground if safe.</div>
+                <div class="dont-item">Don't attempt to drive through floodwaters - your car can be swept away.</div>
+            </div>
+        </div>
+        
+        <div class="important-note">
+            <p><strong>Remember:</strong> Just 12 inches of rushing water can carry away most cars, and just 2 feet of water can sweep away SUVs and trucks. Never underestimate the power of floodwaters.</p>
+        </div>
+        
+        <div class="guideline-section">
+            <h3><i class="fas fa-phone-alt"></i> Emergency Contacts</h3>
+            <div class="guideline-list">
+                <div class="do-item">National Disaster Helpline: <strong>112</strong></div>
+                <div class="do-item">Police: <strong>100</strong></div>
+                <div class="do-item">Keep local emergency numbers handy (see our Emergency Contacts page)</div>
+                <div class="do-item">Listen to weather alerts on radio/TV for official instructions</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
